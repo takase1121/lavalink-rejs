@@ -62,4 +62,4 @@ typings/
 
 *.bat
 
-test/settings.json
+tests/settings.json
