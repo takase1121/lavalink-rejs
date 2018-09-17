@@ -33,13 +33,9 @@ class LavalinkClient {
     async resolve(query, search = false) {
         if (!query) return null;
 
-        if (search) {
-            query = `http://${this.host}:${this.port}/loadtracks?ytsearch=${encodeURIComponent(query)}`;
-        } else {
-            query = `http://${this.host}:${this.port}/loadtracks?identifier=${encodeURIComponent(query)}`
-        }
+        if (search) query = `ytsearch:${query}`;
 
-        let res = await fetch(query, {
+        let res = await fetch(`http://${this.host}:${this.port}/loadtracks?identifier=${encodeURIComponent(query)}`, {
             headers: {
                 Authorization: this.password
             }
@@ -59,5 +55,11 @@ class LavalinkClient {
         if (res.loadType === "TRACK_LOADED") {
             return res.tracks[0];
         }
+
+        if (res.loadType === "SEARCH_RESULT") {
+            return res;
+        }
     }
 }
+
+module.exports = LavalinkClient;
