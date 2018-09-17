@@ -25,7 +25,7 @@ class LavalinkClient {
 
 
     /**
-     * Resolve something. Returns null if search failed.
+     * Resolve something. When searching, this method returns null if there are no matches.
      * @param {String} query The query to resolve.
      * @param {Boolean} search A search term or an ID to check.
      * @returns {Object|Array}
