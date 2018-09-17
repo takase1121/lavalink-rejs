@@ -1,0 +1,19 @@
+{
+  "name": "lavalink-rejs",
+  "version": "1.0.0",
+  "description": "A Lavalink REST API wrapper in JavaScript",
+  "main": "LavalinkREST.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lavalink",
+    "discord",
+    "bot"
+  ],
+  "author": "Takase",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.2.0"
+  }
+}
