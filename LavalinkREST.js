@@ -34,10 +34,10 @@ class LavalinkClient {
         if (!query) return null;
 
         if (!query.match(ytRegex)) {
-            query = `${search.toLowerCase()}search:${query}`;
+            query = encodeURIComponent(`${search.toLowerCase()}search:${query}`);
         }
 
-        let res = await fetch(`http://${this.host}:${this.port}/loadtracks?identifier=${encodeURIComponent(query)}`, {
+        let res = await fetch(`http://${this.host}:${this.port}/loadtracks?identifier=${query}`, {
             headers: {
                 Authorization: this.password
             }
