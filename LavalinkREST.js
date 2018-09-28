@@ -44,7 +44,7 @@ class LavalinkClient {
         });
         res = await res.json();
 
-        if (state.fatal.includes(res.loadType)) throw "FATAL ERROR FROM LAVALINK REST API. 'LOAD_FAILED' RECEIVED."
+        if (state.fatal.includes(res.loadType)) throw "FATAL ERROR: 'LOAD_FAILED' RECEIVED."
 
         if (state.bad.includes(res.loadType)) return null;
 
